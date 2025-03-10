@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph3"
+    app:startDestination="@id/levels_menu">
+
+    <fragment
+        android:id="@+id/levels_menu"
+        android:name="com.example.testapp.LevelsMenu"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/levels_menu">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/level0" />
+        <action
+            android:id="@+id/action_levels_menu_to_level1"
+            app:destination="@id/level1" />
+    </fragment>
+    <fragment
+        android:id="@+id/level0"
+        android:name="com.example.testapp.Level0"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/levels_menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/level1"
+        android:name="com.example.testapp.Level1"
+        android:label="Level 1"
+        tools:layout="@layout/level1" >
+        <action
+            android:id="@+id/action_level1_to_FirstFragment"
+            app:destination="@id/levels_menu" />
+        <action
+            android:id="@+id/action_level1_to_levels_menu"
+            app:destination="@id/levels_menu" />
+    </fragment>
+</navigation>
